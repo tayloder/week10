@@ -1,0 +1,68 @@
+<h1>POST request recieved:</h1>
+<form method="post">
+  <fieldset>
+  <legend>Add a Completed Exercise</legend>
+    <label>Name:
+      <input type="text" name="text_input" size="30" maxlength="100">
+    </label>
+    <label>Repititions:
+      <input type="number" name="numerical_input" size="30" maxlength="100">
+    </label>
+    <label>Weight:
+      <input type="password" name="password_input" size="30" maxlength="100">
+    </label>
+    <label>Date:
+      <input type="number" name="numerical_input" size="30" maxlength="100">
+    </label>
+  <br />
+    <p> Unit:
+      <br />
+      <label>
+        <input type="radio" name="unit" value="lb" />Pounds</label>
+      <br />
+      <label>
+        <input type="radio" name="unit" value="kg" />Kilograms</label>
+    </p>
+    <br />
+    <input type="submit" name="Add Exercise" value="Submit" />
+</fieldset>
+</form>
+<br />
+<table>
+  <caption>Completed Exercises</caption>
+<thead>
+    <tr>
+      <th>Name</th>
+      <th>Repititions</th>
+      <th>Weight</th>
+      <th>Date</th>
+      <th>Unit</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+  {{#each queryResults}}
+  <tr>
+      <td>{{this.name}}</td>
+      <td>{{this.reps}}</td>
+      <td>{{this.weight}}</td>
+      <td>{{this.date}}</td>
+      <td>{{this.unit}}</td>
+      <td><input type="submit" name="Edit" value="Edit" /></td>
+      <td><input type="submit" name="Delete" value="Delete" /></td>
+  </tr>
+  {{/each}}
+  {{#each bodyResults}}
+    <tr>
+      <td>{{this.name}}</td>
+      <td>{{this.reps}}</td>
+      <td>{{this.weight}}</td>
+      <td>{{this.date}}</td>
+      <td>{{this.unit}}</td>
+      <td><input type="submit" name="Edit" value="Edit" /></td>
+      <td><input type="submit" name="Delete" value="Delete" /></td>
+    </tr>
+    {{/each}}
+  </tbody>
+  </table>
