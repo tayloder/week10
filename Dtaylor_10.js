@@ -60,7 +60,7 @@ app.get('/submit-form',function(req,res,next){
    });
  });
 
-/*app.post('/submit-form', function(req,res,next){
+app.post('/submit-form', function(req,res,next){
   var queryParams = [];
   var context = {};
    pool.query("INSERT INTO workouts VALUES (?)", [req.query], function(err, result){
@@ -78,7 +78,7 @@ app.get('/submit-form',function(req,res,next){
      res.render('post-submit',context);
    });
  });
-});*/
+});
 
 app.use(function(req,res){
  res.status(404);
